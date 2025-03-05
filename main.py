@@ -1,20 +1,34 @@
+import os
 import requests
 from flask import Flask, render_template
 
 app = Flask(__name__)
 
-kube_url = 'https://192.168.0.44:6443/api/v1/namespaces/default/pods'
+kube_url = os.environ['KUBEHOST']
 key = './certs/abed.key'
 cert = './certs/abed.crt'
 ca = './certs/ca.crt'
 
-response = requests.get(kube_url, cert=(cert, key), verify=ca)
+def get_data():
 
-if response.status_code  == 200:
-    pods_data = response.json()
-    pods = [{'name': pod['metadata']['name'], 'status': pod['status']['phase']} for pod in pods_data['items']]
-else:
-    print(f'[-] Auth error: {response.status_code}')
-    print(response.text)
+    response = requests.get(kube_url, cert=(cert, key), verify=ca)
+
+    if response.status_code  == 200:
+        pods_data = response.json()
+        return  [{'name': pod['metadata']['name'], 'status': pod['status']['phase']} for pod in pods_data['items']]
+    else:
+        print(f'[-] Auth error: {response.status_code}')
+        print(response.text)
+        return None
+    
+@app.route('/')
+def dashboard():
+    return render_template('index.html', pods=get_data())
+
+if __name__ == '__main__':
+    app.run('0.0.0.0', 5000, debug=True)
+
+
+
 
 
