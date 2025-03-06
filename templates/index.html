@@ -8,19 +8,21 @@
 </head>
 <body>
     <div class="header">
-        <h1><center>Acko Kubernetes Dashboard</center></h1>
+        <h1>Acko Kubernetes Dashboard</h1>
     </div>
-    <table>
-        <tr>
-            <th>Pod Name</th>
-            <th>Status</th>
-        </tr>
-        {% for pod in pods %}
-        <tr>
-            <th>{{ pod.name }}</th>
-            <th>{{ pod.status }}</th>
-        </tr>
-        {% endfor %}
-    </table>
+    <div class="podtable">
+        <table>
+            <tr>
+                <th>Pod Name</th>
+                <th>Status</th>
+            </tr>
+            {% for pod in pods %}
+            <tr>
+                <th>{{ pod.name }}</th>
+                <th>{{ pod.status }}</th>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 </body>
 </html>
