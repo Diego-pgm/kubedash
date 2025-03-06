@@ -30,8 +30,20 @@ h1 {
 
 table{
     font-size: 2rem;
-    border-collapse: collapse;
-    margin: 20rem;
+    margin-top: 20rem;
+    margin-left: 10rem;
+}
+
+@media (min-width: 768px){
+    table{
+        margin-left: 25rem;
+    }
+}
+
+@media (min-width: 1200px){
+    table{
+        margin-left: 50rem;
+    }
 }
 
 th, td {
