@@ -1,3 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Para asegurar que el padding y margen no afecten el tamaño de los elementos */
+}
+
 body {
     background-color: #0b9f31;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+h1 {
+    font-size: 4.8rem;
+}
+
+.header{
+    background-color: #076d21;
+    height: 6rem;
+    width: 100%;
+    padding: 0 auto;
 }
