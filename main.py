@@ -5,8 +5,8 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 kube_url = os.environ['KUBEHOST']
-key = './certs/abed.key'
-cert = './certs/abed.crt'
+key = './certs/user.key'
+cert = './certs/user.crt'
 ca = './certs/ca.crt'
 
 def get_data():
@@ -27,6 +27,8 @@ def dashboard():
 
 if __name__ == '__main__':
     app.run('0.0.0.0', 5000, debug=True)
+
+
 
 
 
