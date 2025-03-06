@@ -18,7 +18,6 @@ This application has a Dockerfile to create a Docker container.
 
 - It needs to have the user certificates mounted in the /app/certs volume.
 - The port running the app by default is the 5000.
-- It also needs the 
 
 Steps:
 
