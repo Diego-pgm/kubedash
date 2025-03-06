@@ -30,7 +30,11 @@ docker build -t kubedash:<tag> .
 2. Run a container
 
 ```
-docker run -dti -p 5000:5000 -e "KUBEHOST=https://<kubernetes-api-url>:<port>/api/v1/namespace/default/pods" -v ./certs/:/app/certs kubedash:<tag>
+docker run -dti \
+    -p 5000:5000 \
+    -e "KUBEHOST=https://<kubernetes-api-url>:<port>/api/v1/namespace/default/pods" \
+    -v ./certs/:/app/certs \
+    kubedash:<tag>
 ```
 
 If done correctly and the user has the authorization to watch pods in the default namespace it should show the dashboard containing a table with the pods name and their status.
