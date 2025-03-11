@@ -3,12 +3,12 @@ pipeline{
     stages{
         stage('Build Image'){
             steps{
-                sh 'docker build -t diegopgm23/kubedash:v1.1 .'
+                sh 'docker build -t diegopgm23/kubedash:v1.2 .'
             }
         }
         stage('Push Image'){
             steps{
-                sh 'docker push diegopgm23/kubedash:v1.1'
+                sh 'docker push diegopgm23/kubedash:v1.2'
             }
         }
     }
