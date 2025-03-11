@@ -11,12 +11,12 @@
         <h1>Kubernetes Dashboard</h1>
     </div>
         <table>
-            <tr>
+            <tr class="title">
                 <th>Pod Name</th>
                 <th>Status</th>
             </tr>
             {% for pod in pods %}
-            <tr>
+            <tr class="pods">
                 <th>{{ pod.name }}</th>
                 <th>{{ pod.status }}</th>
             </tr>

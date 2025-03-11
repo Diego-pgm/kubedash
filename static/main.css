@@ -57,12 +57,18 @@ th, td {
     padding: 4rem;
     text-align: left;
 }
-th{
-    background-color: #4CAF50;
-    color: white;
-    background-size: cover;
-}
 
 table, th, td {
     border: 1px solid #076d21;
+}
+
+
+.title{
+    color: blanchedalmond;   
+    background-color: #6c53b3;
+}
+
+.pods {
+    color: azure;
+    background-color: #80d483;
 }
